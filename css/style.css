@@ -1,8 +1,8 @@
 :root {
-  --primario: #4d9ce0;
+  --primario: #3a87cb;
   --primario-obscuro: #2f5e88;
   --secundario: #ffae18;
-  --secundario-obscuro: #e99f16;
+  --secundario-claro: #ffc75e;
   --blanco: #F2F2F2;
   --negro: #000000;
   --fuente-principal: "Staatliches", cursive;
@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: var(--secundario-obscuro);    /* color of the scroll thumb */
+    background-color: var(--secundario-claro);    /* color of the scroll thumb */
     border: 1px solid var(--primario-obscuro);  /* creates padding around scroll thumb */
   }
 
@@ -45,8 +45,8 @@ p {
 a {
     text-decoration: none;
 }
-image {
-    max-width: 100%;
+img {
+    width: 100%;
 }
 .contenedor {
     max-width: 120rem;
@@ -54,7 +54,7 @@ image {
 }
 h1, h2, h3 {
     text-align: center;
-    color: var(--secundario-obscuro);
+    color: var(--secundario-claro);
     font-family: var(--fuente-principal);
 }
 h1 {
@@ -122,9 +122,6 @@ h3 {
     background-color: var(--primario-obscuro);
     padding: 1rem;
 }
-.producto__imagen {
-    width: 100%;
-}
 .producto__nombre {
     font-size: 4rem;
 }
@@ -158,5 +155,96 @@ h3 {
     .grafico--node {
         grid-row: 5 / 6;
         grid-column: 2 / 4;
+    }
+}
+
+/* Nosotros */
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+@media (min-width: 768px) {
+    .nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.nosotros__contenido {
+    text-align: justify;
+}
+.nosotros__imagen {
+    grid-row: 1 / 2;
+    margin: auto 0;
+}
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }
+}
+/* Bloques */
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque {
+    text-align: center;
+}
+.bloque__titulo {
+    margin: 0;
+}
+.bloque__contenido {
+    text-align: justify;
+}
+/* Pagina de producto */
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.formulario {
+    display: grid;
+    gap: 2rem;
+}
+.formulario__campo {
+    border: 2rem solid var(--primario-obscuro);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+.formulario__campo::placeholder {
+    color: var(--blanco);
+}
+.formulario__campo option {
+    color: var(--primario-obscuro);
+}
+.formulario__submit {
+    background-color: var(--secundario-claro);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    padding: 2rem;
+    transition: background-color 3s ease;
+    color: var(--primario-obscuro);
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundario);
+}
+@media (min-width: 768px) {
+    .formulario__campo {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
